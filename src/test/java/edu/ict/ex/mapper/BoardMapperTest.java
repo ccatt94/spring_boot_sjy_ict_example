@@ -2,11 +2,14 @@ package edu.ict.ex.mapper;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.util.List;
+
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import edu.ict.ex.page.Criteria;
 import edu.ict.ex.vo.BoardVO;
 import lombok.extern.slf4j.Slf4j;
 
@@ -58,7 +61,7 @@ class BoardMapperTest {
 //	}
 
 	
-	
+	@Disabled
 	@Test
 	void testUpdate() {
 		
@@ -79,5 +82,19 @@ class BoardMapperTest {
 //		int count = boardMapper.modify(4,"홍길동", "제목", "내용");
 //		System.out.println("수정된 갯수 " + count);
 //	}
+	
+	@Test
+	void testGetListWithPaging() {
+		
+		Criteria criteria = new Criteria();
+		
+		criteria.setAmount(10);
+		criteria.setPageNum(3);
+		
+		List<BoardVO> list = boardMapper.getListWithPaging(criteria);
+		System.out.println(list);
+	}
+	
+	
 
 }
