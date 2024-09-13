@@ -21,6 +21,8 @@ public interface BoardService {
    int modifyBoard(BoardVO boardVO);
    //int modify(int bno, String bname, String btitle, String bcontent);
 
+   int upHit(BoardVO board);
+   
    //댓글
    void writeReply(BoardVO board);
    
