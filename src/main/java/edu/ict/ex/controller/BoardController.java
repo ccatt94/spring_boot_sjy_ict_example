@@ -67,30 +67,48 @@ public class BoardController {
 		
 		log.info("write()..");
 		
-		String bname = boardVO.getBname();
-		String btitle = boardVO.getBtitle();
-		String bcontent = boardVO.getBcontent();
 		
-		
-		
-		boardService.write(bname, btitle, bcontent);
+		boardService.writeBoard(boardVO);
 		
 		return "redirect:/board/list";
 	}
+	
+//	@PostMapping("/write")
+//	public String write(BoardVO boardVO) {
+//		
+//		log.info("write()..");
+//		
+//		String bname = boardVO.getBname();
+//		String btitle = boardVO.getBtitle();
+//		String bcontent = boardVO.getBcontent();
+//		
+//		boardService.write(bname, btitle, bcontent);
+//		
+//		return "redirect:/board/list";
+//	}
 	
 	@PostMapping("/modify")
 	public String modify(BoardVO boardVO) {
 		
 		log.info("modify()..");
 		
-		int bid = boardVO.getBid();
-		String bname = boardVO.getBname();
-		String btitle = boardVO.getBtitle();
-		String bcontent = boardVO.getBcontent();
-		
-		boardService.modify(bid, bname, btitle, bcontent);
+		boardService.modifyBoard(boardVO);
 		
 		return "redirect:/board/list";
 	}
+//	@PostMapping("/modify")
+//	public String modify(BoardVO boardVO) {
+//		
+//		log.info("modify()..");
+//		
+//		int bid = boardVO.getBid();
+//		String bname = boardVO.getBname();
+//		String btitle = boardVO.getBtitle();
+//		String bcontent = boardVO.getBcontent();
+//		
+//		boardService.modify(bid, bname, btitle, bcontent);
+//		
+//		return "redirect:/board/list";
+//	}
 	
 }

@@ -2,6 +2,7 @@ package edu.ict.ex.service;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Service;
 
 import edu.ict.ex.vo.BoardVO;
@@ -15,7 +16,9 @@ public interface BoardService {
    
    int remove(int bno);
    
-   int write(String bname, String btitle, String bcontent);
+   int writeBoard(BoardVO boardVO);
+   //int write(String bname, String btitle, String bcontent);
    
-   int modify(int bno, String bname, String btitle, String bcontent);
+   int modifyBoard(BoardVO boardVO);
+   //int modify(int bno, String bname, String btitle, String bcontent);
 }

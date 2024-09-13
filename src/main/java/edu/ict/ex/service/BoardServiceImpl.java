@@ -41,15 +41,29 @@ public class BoardServiceImpl implements BoardService {
 	}
 
 	@Override
-	public int write(String bname, String btitle, String bcontent) {
-		
-		return boardMapper.write(bname, btitle, bcontent);
+	public int writeBoard(BoardVO boardVO) {
+		log.info("writeBoard()..");
+		return boardMapper.insertBoard(boardVO);
 	}
 
+	
+//	@Override
+//	public int write(String bname, String btitle, String bcontent) {
+//		
+//		return boardMapper.write(bname, btitle, bcontent);
+//	}
+
+
 	@Override
-	public int modify(int bno, String bname, String btitle, String bcontent) {
-		
-		return boardMapper.modify(bno, bname, btitle, bcontent);
+	public int modifyBoard(BoardVO board) {
+		log.info("modifyBoard()..");
+		return boardMapper.updateBoard(board);
 	}
+//	@Override
+//	public int modify(int bno, String bname, String btitle, String bcontent) {
+//		
+//		return boardMapper.modify(bno, bname, btitle, bcontent);
+//	}
+
    
 }

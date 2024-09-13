@@ -47,24 +47,37 @@ class BoardMapperTest {
 		
 	}
 	
-	@Disabled
+	
+	//게시판 작성 (self)
+//	@Disabled
+//	@Test
+//	void testWrite() {
+//		int count = boardMapper.write("홍길동", "제목", "내용");
+//		System.out.println("삽입된 갯수 " + count);
+//
+//	}
+
+	
+	
 	@Test
-	void testWrite() {
-
-		int count = boardMapper.write("홍길동", "제목", "내용");
-
-		System.out.println("삽입된 갯수 " + count);
-
+	void testUpdate() {
+		
+		BoardVO board = new BoardVO();
+		board.setBid(44);
+		board.setBname("홍길동");
+		board.setBtitle("제목");
+		board.setBcontent("내용");
+		
+		int count = boardMapper.updateBoard(board);
+		
+		System.out.println("업데이트된 갯수 " + count);
+		
+		System.out.println(boardMapper.read(44));
 	}
-
-	@Test
-	void testModify() {
-		
-		
-		int count = boardMapper.modify(4,"홍길동", "제목", "내용");
-		
-		System.out.println("수정된 갯수 " + count);
-		
-	}
+//	@Test
+//	void testModify() {
+//		int count = boardMapper.modify(4,"홍길동", "제목", "내용");
+//		System.out.println("수정된 갯수 " + count);
+//	}
 
 }
