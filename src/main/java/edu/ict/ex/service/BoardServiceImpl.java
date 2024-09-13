@@ -65,5 +65,15 @@ public class BoardServiceImpl implements BoardService {
 //		return boardMapper.modify(bno, bname, btitle, bcontent);
 //	}
 
+	
+	//순서있는 기능이 오는 부분 = 비즈니스 로직 = 기능이 있는 로직 = 반드시 서비스 단에서 해결
+	@Override
+	public void writeReply(BoardVO board) {
+		log.info("writeReply()..");
+		
+		boardMapper.updateShape(board);
+		boardMapper.insertReply(board);
+	}
+
    
 }

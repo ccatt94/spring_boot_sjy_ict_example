@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -110,5 +111,27 @@ public class BoardController {
 //		
 //		return "redirect:/board/list";
 //	}
+	
+	//localhost:8282/board/reply_view?bid=5
+	@GetMapping("/reply_view")
+	public String reply_view(BoardVO boardVO, Model model) {
+		
+		log.info("reply_view()..");
+		
+		model.addAttribute("reply_view", boardService.get(boardVO.getBid()));
+		
+		return "/board/reply_view";
+	}
+	
+	//localhost:8282/board/reply_view?bid=5
+	@PostMapping("/reply")
+	public String reply(BoardVO boardVO) {
+		
+		log.info("reply()..");
+		
+		boardService.writeReply(boardVO);
+		
+		return "redirect:/board/list";
+	}
 	
 }

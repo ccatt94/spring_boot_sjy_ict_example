@@ -30,4 +30,10 @@ public interface BoardMapper {
 	//게시판 수정
 	int updateBoard(BoardVO boardVO);
 	//int modify(int bno, String bname, String btitle, String bcontent);
+	
+	//댓글 관련
+	public void updateShape(BoardVO boardVO);
+	public void insertReply(BoardVO boardVO);
+	
+	
 }
