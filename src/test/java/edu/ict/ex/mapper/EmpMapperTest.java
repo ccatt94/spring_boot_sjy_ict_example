@@ -21,9 +21,19 @@ class EmpMapperTest {
 	@Autowired
 	private EmpMapper empMapper;
 	
+	@Disabled
 	@Test
 	void testGetList() {
 		for (EmpVO vo : empMapper.getList()) {
+			System.out.println(vo);
+			
+		}
+	}
+	
+	@Disabled
+	@Test
+	void testGetEmpDeptList() {
+		for (EmpVO vo : empMapper.getEmpDeptList()) {
 			System.out.println(vo);
 			
 		}
@@ -53,6 +63,7 @@ class EmpMapperTest {
 		}
 	}
 	
+	@Disabled
 	@Test
 	void testGetListWithPaging() {
 		
@@ -63,6 +74,12 @@ class EmpMapperTest {
 		
 		List<EmpVO> list = empMapper.getListWithPaging(criteria);
 		System.out.println(list);
+	}
+	
+	@Test
+	void testGetDeptEmpList() {
+		
+		System.out.println(empMapper.getDeptEmpList());
 	}
 	
 }

@@ -28,4 +28,31 @@
          	) WHERE RNUM > (#{pageNum}-1) * #{amount}
     	]]>
     </select>
+    
+    <select id="getEmpDeptList" resultType="EmpVO">
+        select * from emp, dept where emp.deptno = dept.deptno
+    </select>
+    
+    <resultMap id="deptMap" type="DeptEmpVO">
+        <result property="deptno" column="deptno"/>
+        <result property="dname" column="dname"/>
+        <result property="loc" column="loc"/>
+        <collection property="empList" resultMap="empMap"></collection>
+    </resultMap>
+    
+    <resultMap id="empMap" type="EmpVO">
+        <id property="empno" column="empno"/>
+        <result property="ename" column="ename"/>
+        <result property="job" column="job"/>
+        <result property="mgr" column="mgr"/>
+        <result property="hiredate" column="hiredate"/>
+        <result property="sal" column="sal"/>
+        <result property="comm" column="comm"/>
+        <result property="deptno" column="deptno"/>
+    </resultMap>
+    
+    <select id="getDeptEmpList" resultMap="deptMap">
+        select * from emp, dept where emp.deptno = dept.deptno
+    </select>
+    
 </mapper>
