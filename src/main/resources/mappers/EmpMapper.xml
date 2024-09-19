@@ -49,10 +49,42 @@
         <result property="sal" column="sal"/>
         <result property="comm" column="comm"/>
         <result property="deptno" column="deptno"/>
+<!--         <collection property="deptList" resultMap="deptMap"></collection> -->
     </resultMap>
     
     <select id="getDeptEmpList" resultMap="deptMap">
         select * from emp, dept where emp.deptno = dept.deptno
     </select>
+    
+    
+    <resultMap id="salgradeMap" type="SalGradeVO">
+        <result property="grade" column="grade"/>
+        <result property="losal" column="losal"/>
+        <result property="hisal" column="hisal"/>
+        <collection property="deptEmpList" resultMap="deptMap"></collection>
+    </resultMap>
+    
+    <resultMap id="deptempMap" type="DeptVO">
+        <id property="deptno" column="deptno"/>
+        <result property="dname" column="dname"/>
+        <result property="loc" column="loc"/>
+    </resultMap>
+    
+    <select id="getEmpSalGradeList" resultMap="salgradeMap">
+    	<![CDATA[
+			SELECT E.ENAME, E.SAL, S.GRADE
+			FROM EMP E, SALGRADE S
+			WHERE E.SAL BETWEEN S.LOSAL AND S.HISAL
+		]]>	
+	</select>
+	
+    <select id="getEmpDeptSalGradeList" resultMap="salgradeMap">
+    	<![CDATA[
+			SELECT E.ENAME, E.SAL, D.DEPTNO, D.LOC, S.GRADE 
+			FROM EMP E, DEPT D, SALGRADE S 
+			WHERE E.DEPTNO = D.DEPTNO AND E.SAL BETWEEN S.LOSAL AND S.HISAL
+		]]>	
+	</select>
+    
     
 </mapper>

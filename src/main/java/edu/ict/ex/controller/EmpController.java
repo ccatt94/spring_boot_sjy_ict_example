@@ -88,6 +88,24 @@ public class EmpController {
 		return "emp/list4";
 	}
 	
+	@GetMapping("/salgrade")
+	public String salgrade(Model model) {
+		
+		System.out.println("salgrade()..");
+		
+		model.addAttribute("empSalGradeList", empService.getEmpSalGradeList());
+		
+		return "emp/salgrade";
+	}
 	
+	@GetMapping("/info")
+	public String info(Model model) {
+		
+		System.out.println("info()..");
+		
+		model.addAttribute("empDeptSalGradeList", empService.getEmpDeptSalGradeList());
+		
+		return "emp/info";
+	}
 	
 }

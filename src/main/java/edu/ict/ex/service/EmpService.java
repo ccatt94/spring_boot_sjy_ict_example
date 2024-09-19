@@ -13,6 +13,7 @@ import edu.ict.ex.vo.BoardVO;
 import edu.ict.ex.vo.DeptEmpVO;
 import edu.ict.ex.vo.DeptVO;
 import edu.ict.ex.vo.EmpVO;
+import edu.ict.ex.vo.SalGradeVO;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
@@ -52,5 +53,14 @@ public class EmpService {
 		return empMapper.getDeptEmpList();
 	}
 
+	//조인 처리한 결과
+	public List<SalGradeVO> getEmpSalGradeList() {
+		return empMapper.getEmpSalGradeList();
+	}
+	
+	//조인 처리한 결과
+	public List<SalGradeVO> getEmpDeptSalGradeList() {
+		return empMapper.getEmpDeptSalGradeList();
+	}
 
 }

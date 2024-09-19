@@ -41,4 +41,5 @@ public class EmpVO {
 	private String dname; //부서명
 	private String loc; //위치
 
+	
 }
