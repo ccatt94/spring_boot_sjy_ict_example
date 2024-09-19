@@ -136,6 +136,8 @@ public class BoardController {
 		return "redirect:/board/list";
 	}
 	
+	
+	//Criteria criteria = new Criteria();
 	@GetMapping("/list2")
 	public String list2(Criteria criteria, Model model) {
 		

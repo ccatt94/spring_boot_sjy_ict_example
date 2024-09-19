@@ -6,4 +6,9 @@
     <select id="getList" resultType="edu.ict.ex.vo.EmpVO">
         select * from emp
     </select>
+    
+    <!-- INSERT INTO EMP  VALUES (1111,'홍길동','CLERK',7369,'2024-09-24', 800,8000,10); -->
+    <insert id="insert">
+        INSERT INTO EMP  VALUES (#{empno},#{ename},#{job},#{mgr},#{hiredate2},#{sal},#{comm},#{deptno})
+    </insert>
 </mapper>

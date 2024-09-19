@@ -24,5 +24,12 @@ public class EmpService {
 	   
 	   return empMapper.getList();
    }
+   
+   public int insert(EmpVO empVO){
+		System.out.println("insert() ..");
+		
+		return empMapper.insert(empVO);
+	}
+
 
 }

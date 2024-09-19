@@ -54,9 +54,9 @@ public List<EmpVO> empSelect(){
 				int comm = rs.getInt("comm");
 				int deptno = rs.getInt("deptno");
 				
-				EmpVO vo = new EmpVO(empno, ename, job, mgr, hiredate, sal, comm, deptno);
+				//EmpVO vo = new EmpVO(empno, ename, job, mgr, hiredate2, sal, comm, deptno);
 				
-				vos.add(vo);
+				//vos.add(vo);
 			}
 			
 		} catch (Exception e) {
