@@ -10,7 +10,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>emp 리스트</h1>
+	<h1>emp 일대일 조인 리스트</h1>
 	<table border="1">
 		<tr> <!-- 테이블의 상단에 들어갈 컬럼명들 -->
 			<td>사원명</td>
