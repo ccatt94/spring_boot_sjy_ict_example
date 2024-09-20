@@ -158,4 +158,13 @@ public class EmpController {
 		return "emp/list7";
 	}
 	
+	@GetMapping("/index")
+	public String index(Model model) {
+		
+		System.out.println("list7()..");
+		
+		model.addAttribute("empList", empService.getEmpDeptSalgrade());
+		
+		return "shop/index";
+	}
 }
