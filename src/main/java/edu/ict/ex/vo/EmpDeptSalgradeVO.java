@@ -11,10 +11,11 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class EmpSalgradeVO {
+public class EmpDeptSalgradeVO {
 	private EmpVO emp;
 	private SalGradeVO salgrade;
-	
+	private DeptVO dept;
+
 	
 	
 }

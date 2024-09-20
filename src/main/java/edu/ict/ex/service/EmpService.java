@@ -12,6 +12,7 @@ import edu.ict.ex.repository.EmpDao;
 import edu.ict.ex.vo.BoardVO;
 import edu.ict.ex.vo.DeptEmpVO;
 import edu.ict.ex.vo.DeptVO;
+import edu.ict.ex.vo.EmpDeptSalgradeVO;
 import edu.ict.ex.vo.EmpDeptVO;
 import edu.ict.ex.vo.EmpGradeVO;
 import edu.ict.ex.vo.EmpSalgradeVO;
@@ -79,6 +80,11 @@ public class EmpService {
 	//조인 일대일 처리
 	public List<EmpSalgradeVO> getEmpSalgrade() {
 		return empMapper.getEmpSalgrade();
+	}
+	
+	//조인 일대일 처리2
+	public List<EmpDeptSalgradeVO> getEmpDeptSalgrade() {
+		return empMapper.getEmpDeptSalgrade();
 	}
 	
 	

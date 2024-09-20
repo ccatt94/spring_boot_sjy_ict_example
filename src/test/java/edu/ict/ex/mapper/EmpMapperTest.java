@@ -106,9 +106,15 @@ class EmpMapperTest {
 		System.out.println(empMapper.getOneSalGradeList());
 	}
 	
+	@Disabled
 	@Test
 	void testGetEmpSalgrade() {
 		System.out.println(empMapper.getEmpSalgrade());
+	}
+	
+	@Test
+	void testGetEmpDeptSalgrade() {
+		System.out.println(empMapper.getEmpDeptSalgrade());
 	}
 	
 	
