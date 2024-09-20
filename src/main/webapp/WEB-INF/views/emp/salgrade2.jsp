@@ -10,30 +10,22 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>emp 일대다 매핑 리스트</h1>
+	<h1>emp 일대일 매핑 리스트</h1>
 	<table border="1">
 		<tr> <!-- 테이블의 상단에 들어갈 컬럼명들 -->
 			<td>사원명</td>
 			<td>월급</td>
-			<td>부서번호</td>
-			<td>부서위치</td>
 			<td>등급</td>
 		</tr>
-		<c:forEach var="empDeptSalGrade" items="${empDeptSalGradeList}">
-			<c:forEach var="dept" items="${empDeptSalGrade.deptEmpList}">
-			<c:forEach var="emp" items="${dept.empList}">
+		<c:forEach var="emp" items="${SalList}">
 				<tr>
 					<td>${emp.ename}</td>
 
 					<!-- 숫자 1000을 1,000으로 표시하는 태그 -->
 					<td><fmt:formatNumber value="${emp.sal}" type="number" /></td>
 
-					<td>${emp.deptno}</td>
-					<td>${dept.loc}</td>
-					<td>${empDeptSalGrade.grade}</td>
+					<td>${emp.salgrade.grade}</td>
 				</tr>
-				</c:forEach>
-			</c:forEach>
 		</c:forEach>
 	</table>
 	

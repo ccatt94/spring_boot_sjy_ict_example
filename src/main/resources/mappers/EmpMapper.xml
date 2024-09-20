@@ -61,6 +61,7 @@
         <result property="grade" column="grade"/>
         <result property="losal" column="losal"/>
         <result property="hisal" column="hisal"/>
+       	<!-- 일대다매핑 --> 
         <collection property="deptEmpList" resultMap="deptMap"></collection>
     </resultMap>
     
@@ -85,6 +86,69 @@
 			WHERE E.DEPTNO = D.DEPTNO AND E.SAL BETWEEN S.LOSAL AND S.HISAL
 		]]>	
 	</select>
+	
+	
+	<!-- emp dept 일대일 매핑 -->
+	<resultMap id="deptOneMap" type="DeptVO">
+		<result property="deptno" column="deptno" />
+		<result property="loc" column="loc" />
+		<result property="dname" column="dname" />
+	</resultMap>
     
+    <resultMap id="empDeptMap" type="EmpDeptVO">
+        <id property="empno" column="empno"/>
+        <result property="ename" column="ename"/>
+        <result property="job" column="job"/>
+        <result property="mgr" column="mgr"/>
+        <result property="hiredate" column="hiredate"/>
+        <result property="sal" column="sal"/>
+        <result property="comm" column="comm"/>
+        <result property="deptno" column="deptno"/>
+        <!-- 일대일매핑 -->
+        <association property="dept" resultMap="deptOneMap"></association>
+    </resultMap>
+    
+    <select id="getEmpOneDeptList" resultMap="empDeptMap">
+    	<![CDATA[
+    		select * from emp, dept where emp.deptno = dept.deptno
+		]]>	
+	</select>
+	
+	
+	<!-- ... -->
+	<resultMap id="onesalgradeMap" type="SalGradeVO">
+        <result property="grade" column="grade"/>
+        <result property="losal" column="losal"/>
+        <result property="hisal" column="hisal"/>
+    </resultMap>
+    
+    <resultMap id="empDeptOneMap" type="EmpGradeVO">
+        <id property="empno" column="empno"/>
+        <result property="ename" column="ename"/>
+        <result property="job" column="job"/>
+        <result property="mgr" column="mgr"/>
+        <result property="hiredate" column="hiredate"/>
+        <result property="sal" column="sal"/>
+        <result property="comm" column="comm"/>
+        <result property="deptno" column="deptno"/>
+        <!-- 일대일매핑 -->
+        <association property="salgrade" resultMap="onesalgradeMap"></association>
+        <association property="dept" resultMap="deptOneMap"></association>
+    </resultMap>
+    
+    
+    
+    <select id="getOneSalGradeList" resultMap="empDeptOneMap">
+    	<![CDATA[
+			SELECT *
+			FROM EMP E, DEPT D, SALGRADE S 
+			WHERE E.DEPTNO = D.DEPTNO AND E.SAL BETWEEN S.LOSAL AND S.HISAL
+		]]>	
+	</select>
+	
+	
+	
+	
+	
     
 </mapper>

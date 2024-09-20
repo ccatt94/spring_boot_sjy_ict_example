@@ -12,6 +12,8 @@ import edu.ict.ex.repository.EmpDao;
 import edu.ict.ex.vo.BoardVO;
 import edu.ict.ex.vo.DeptEmpVO;
 import edu.ict.ex.vo.DeptVO;
+import edu.ict.ex.vo.EmpDeptVO;
+import edu.ict.ex.vo.EmpGradeVO;
 import edu.ict.ex.vo.EmpVO;
 import edu.ict.ex.vo.SalGradeVO;
 import lombok.extern.slf4j.Slf4j;
@@ -53,14 +55,23 @@ public class EmpService {
 		return empMapper.getDeptEmpList();
 	}
 
-	//조인 처리한 결과
+	//일대다 처리
 	public List<SalGradeVO> getEmpSalGradeList() {
 		return empMapper.getEmpSalGradeList();
 	}
 	
-	//조인 처리한 결과
+	//일대다 처리
 	public List<SalGradeVO> getEmpDeptSalGradeList() {
 		return empMapper.getEmpDeptSalGradeList();
 	}
 
+	//Emp Dept 일대일 처리
+	public List<EmpDeptVO> getEmpOneDeptList() {
+		return empMapper.getEmpOneDeptList();
+	}
+	
+	//일대일 처리
+	public List<EmpGradeVO> getOneSalGradeList() {
+		return empMapper.getOneSalGradeList();
+	}
 }

@@ -19,9 +19,7 @@
 			<td>부서위치</td>
 			<td>등급</td>
 		</tr>
-		<c:forEach var="empDeptSalGrade" items="${empDeptSalGradeList}">
-			<c:forEach var="dept" items="${empDeptSalGrade.deptEmpList}">
-			<c:forEach var="emp" items="${dept.empList}">
+		<c:forEach var="emp" items="${SalList}">
 				<tr>
 					<td>${emp.ename}</td>
 
@@ -29,11 +27,9 @@
 					<td><fmt:formatNumber value="${emp.sal}" type="number" /></td>
 
 					<td>${emp.deptno}</td>
-					<td>${dept.loc}</td>
-					<td>${empDeptSalGrade.grade}</td>
+					<td>${emp.dept.loc}</td>
+					<td>${emp.salgrade.grade}</td>
 				</tr>
-				</c:forEach>
-			</c:forEach>
 		</c:forEach>
 	</table>
 	

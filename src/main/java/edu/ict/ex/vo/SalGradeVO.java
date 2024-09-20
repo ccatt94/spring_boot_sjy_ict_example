@@ -24,7 +24,8 @@ public class SalGradeVO {
 	private int losal;
 	private int hisal;
 
-	private List<EmpVO> empList;
-	//private List<DeptVO> deptList;
+	//일대다 매핑
 	private List<DeptEmpVO> deptEmpList;
+	
+	
 }

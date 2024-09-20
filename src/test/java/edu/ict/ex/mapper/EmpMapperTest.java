@@ -82,6 +82,7 @@ class EmpMapperTest {
 		System.out.println(empMapper.getDeptEmpList());
 	}
 	
+	@Disabled
 	@Test
 	void testGetEmpSalGradeList() {
 		System.out.println(empMapper.getEmpSalGradeList());
@@ -92,5 +93,18 @@ class EmpMapperTest {
 	void testGetEmpDeptSalGradeList() {
 		System.out.println(empMapper.getEmpDeptSalGradeList());
 	}
+	
+	@Disabled
+	@Test
+	void testGetEmpOneDeptList() {
+		System.out.println(empMapper.getEmpOneDeptList());
+	}
+	
+	@Test
+	void testGetOneSalGradeList() {
+		System.out.println(empMapper.getOneSalGradeList());
+	}
+	
+	
 	
 }

@@ -108,4 +108,34 @@ public class EmpController {
 		return "emp/info";
 	}
 	
+	@GetMapping("/list5")
+	public String list5(Model model) {
+		
+		System.out.println("list5()..");
+		
+		model.addAttribute("empList", empService.getEmpOneDeptList());
+		
+		return "emp/list5";
+	}
+
+	@GetMapping("/salgrade2")
+	public String salgrade2(Model model) {
+		
+		System.out.println("salgrade2()..");
+		
+		model.addAttribute("SalList", empService.getOneSalGradeList());
+		
+		return "emp/salgrade2";
+	}
+
+	@GetMapping("/info2")
+	public String info2(Model model) {
+		
+		System.out.println("info2()..");
+		
+		model.addAttribute("SalList", empService.getOneSalGradeList());
+		
+		return "emp/info2";
+	}
+	
 }
