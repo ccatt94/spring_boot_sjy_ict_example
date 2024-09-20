@@ -115,7 +115,7 @@
 	</select>
 	
 	
-	<!-- ... -->
+	<!-- emp sal dept 조인 -->
 	<resultMap id="onesalgradeMap" type="SalGradeVO">
         <result property="grade" column="grade"/>
         <result property="losal" column="losal"/>
@@ -136,8 +136,6 @@
         <association property="dept" resultMap="deptOneMap"></association>
     </resultMap>
     
-    
-    
     <select id="getOneSalGradeList" resultMap="empDeptOneMap">
     	<![CDATA[
 			SELECT *
@@ -147,8 +145,44 @@
 	</select>
 	
 	
+	<!-- 일대일 학원 -->
+	<resultMap id="deptMap_1" type="DeptVO">
+        <result property="deptno" column="deptno"/>
+       <result property="loc" column="loc"/>
+       <result property="dname" column="dname"/>    
+   </resultMap>     
+    
+    <resultMap id="empMap_1" type="EmpVO" >
+       <id property="empno" column="empno"/>
+       <result property="ename" column="ename"/>
+       <result property="job" column="job"/>
+       <result property="mgr" column="mgr"/>
+       <result property="hiredate" column="hiredate"/>
+       <result property="sal" column="sal"/>
+       <result property="comm" column="comm"/>
+       <result property="deptno" column="deptno"/>
+    </resultMap>
+    
+    <resultMap id="salgradeMap_1" type="SalgradeVO">
+        <result property="grade" column="grade"/>
+       <result property="losal" column="losal"/>
+       <result property="hisal" column="hisal"/>    
+    </resultMap>
 	
+	<resultMap id="empSalgradeMap_1" type="EmpSalgradeVO">
+		<association property="emp" resultMap="empMap_1"></association>
+        <association property="salgrade" resultMap="salgradeMap_1"></association>
+	</resultMap>
 	
-	
+	<select id="getEmpSalgrade" resultMap="empSalgradeMap_1">
+    	<![CDATA[
+			SELECT *
+			FROM EMP E, SALGRADE S
+			WHERE E.SAL BETWEEN S.LOSAL AND S.HISAL
+		]]>	
+	</select>
+    
+    
+    
     
 </mapper>

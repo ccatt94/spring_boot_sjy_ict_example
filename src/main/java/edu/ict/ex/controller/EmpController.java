@@ -138,4 +138,15 @@ public class EmpController {
 		return "emp/info2";
 	}
 	
+	@GetMapping("/list6")
+	public String list6(Model model) {
+		
+		System.out.println("list6()..");
+		
+		model.addAttribute("empList", empService.getEmpSalgrade());
+		
+		return "emp/list6";
+	}
+	
+	
 }

@@ -8,6 +8,7 @@ import edu.ict.ex.page.Criteria;
 import edu.ict.ex.vo.DeptEmpVO;
 import edu.ict.ex.vo.EmpDeptVO;
 import edu.ict.ex.vo.EmpGradeVO;
+import edu.ict.ex.vo.EmpSalgradeVO;
 import edu.ict.ex.vo.EmpVO;
 import edu.ict.ex.vo.SalGradeVO;
 
@@ -39,5 +40,7 @@ public interface EmpMapper {
 	
 	//salgrade, dept, emp 일대일 처리
 	public List<EmpGradeVO> getOneSalGradeList();
+	
+	List<EmpSalgradeVO> getEmpSalgrade();
 	
 }

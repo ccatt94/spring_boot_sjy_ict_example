@@ -14,6 +14,7 @@ import edu.ict.ex.vo.DeptEmpVO;
 import edu.ict.ex.vo.DeptVO;
 import edu.ict.ex.vo.EmpDeptVO;
 import edu.ict.ex.vo.EmpGradeVO;
+import edu.ict.ex.vo.EmpSalgradeVO;
 import edu.ict.ex.vo.EmpVO;
 import edu.ict.ex.vo.SalGradeVO;
 import lombok.extern.slf4j.Slf4j;
@@ -74,4 +75,11 @@ public class EmpService {
 	public List<EmpGradeVO> getOneSalGradeList() {
 		return empMapper.getOneSalGradeList();
 	}
+	
+	//조인 일대일 처리
+	public List<EmpSalgradeVO> getEmpSalgrade() {
+		return empMapper.getEmpSalgrade();
+	}
+	
+	
 }

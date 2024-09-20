@@ -49,7 +49,7 @@ class EmpMapperTest {
 		emp.setEname("홍길순");
 		emp.setJob("CLERK");
 		emp.setMgr(7369);
-		emp.setHiredate2("2024-09-24");
+		//emp.setHiredate2("2024-09-24");
 		emp.setSal(800);
 		emp.setComm(2000);
 		emp.setDeptno(10);
@@ -100,11 +100,16 @@ class EmpMapperTest {
 		System.out.println(empMapper.getEmpOneDeptList());
 	}
 	
+	@Disabled
 	@Test
 	void testGetOneSalGradeList() {
 		System.out.println(empMapper.getOneSalGradeList());
 	}
 	
+	@Test
+	void testGetEmpSalgrade() {
+		System.out.println(empMapper.getEmpSalgrade());
+	}
 	
 	
 }
