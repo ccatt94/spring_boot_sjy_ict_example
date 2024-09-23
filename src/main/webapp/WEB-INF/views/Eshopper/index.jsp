@@ -369,6 +369,9 @@
 							<div class="product-image-wrapper">
 								<div class="single-products">
 										<div class="productinfo text-center">
+										
+											<%-- <img src="images/home/product${vo.getNum()}.jpg" alt="" /> --%>
+											<!-- 아래와 같은 의미 -->
 											<img src="images/home/product${vo.num}.jpg" alt="" />
 											<h2>$${vo.emp.sal}</h2>
 											<p>${vo.dept.loc}</p>
