@@ -5,6 +5,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<title>Insert title here</title>
+</head>
 <body>
 
 	<h1>절대 경로 상대 경로 테스트</h1>

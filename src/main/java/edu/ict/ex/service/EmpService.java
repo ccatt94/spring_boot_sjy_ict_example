@@ -7,11 +7,7 @@ import org.springframework.stereotype.Service;
 
 import edu.ict.ex.mapper.EmpMapper;
 import edu.ict.ex.page.Criteria;
-import edu.ict.ex.repository.DeptDao;
-import edu.ict.ex.repository.EmpDao;
-import edu.ict.ex.vo.BoardVO;
 import edu.ict.ex.vo.DeptEmpVO;
-import edu.ict.ex.vo.DeptVO;
 import edu.ict.ex.vo.EmpDeptSalgradeVO;
 import edu.ict.ex.vo.EmpDeptVO;
 import edu.ict.ex.vo.EmpGradeVO;
