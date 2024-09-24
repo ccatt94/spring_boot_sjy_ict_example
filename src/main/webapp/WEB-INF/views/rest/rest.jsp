@@ -17,6 +17,7 @@
       //board.get(1021)
 
       let boardObj = {
+    	 bid : 1055,
          bname : "아햏햏",
          bcontent : "수정",
          btitle : "음매에 ~~~"

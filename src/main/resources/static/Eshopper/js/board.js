@@ -88,8 +88,7 @@ let boardService = function() {
          data: JSON.stringify(board),
          success: function(result) {
 
-            if (result == "SUCCESS")
-               console.log(result);
+               console.log("업데이트된 갯수" + result);
 
          },
          error: function(e) {

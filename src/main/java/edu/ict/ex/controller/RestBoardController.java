@@ -149,7 +149,7 @@ public class RestBoardController {
       ResponseEntity<String> entity = null;
 
       try {
-         boardService.writeBoard(board);
+         boardService.modifyBoard(board);
          entity = new ResponseEntity<String>("SUCCESS", HttpStatus.OK);
 
       } catch (Exception e) {
