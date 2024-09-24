@@ -51,7 +51,7 @@ $(document).ready(function(){
 			}); //each end
 			
 	    	htmls+='<tr>';
-	    	htmls+='<td colspan="5"> <a href="/write_view">글작성</a> </td>';		                	
+	    	htmls+='<td colspan="5"> <a href="/rest_content_view.html"> </td>';		                	
 	    	htmls+='</tr>';				
 			
 		}

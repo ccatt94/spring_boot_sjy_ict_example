@@ -10,106 +10,112 @@
 
 console.log("board 모듈..");
 
-let boardService = function() {
+let boardService = function(){
    //console.log("안녕하세요");
    function list(callback){
-
+      
       $.ajax({
-         type: "GET",
+         type:"GET",
          url: "/boards/list",
-         success: function(result) {
+         success : function(result) {
             console.log(result);
-			
-			 if (callback) {
-				 callback(result);
-			 }
-			 
+            
+            if(callback){
+               callback(result);
+            }
+            
          },
-         error: function(e) {
+         error:function(e){
             console.log(e);
          }
-
-      });
+         
+      });      
    } //list()
-
-   function get(id) {
-
-      $.ajax({
-         type: "GET",
-         url: "/boards/" + id,
-         success: function(result) {
-            console.log(result);
-         },
-         error: function(e) {
-            console.log(e);
-         }
-
-      });
-   }
-
-   function add(board) {
-
-      $.ajax({
-         type: "POST",
-         url: "/boards/",
-         contentType: 'application/json; charset=utf-8',
-         data: JSON.stringify(board),
-         success: function(result) {
-
-            if (result == "SUCCESS")
-               console.log(result);
-
-         },
-         error: function(e) {
-            console.log(e);
-         }
-
-      });
-   }
-
-   function del(bid) {
-
-      $.ajax({
-         type: "DELETE",
-         url: "/boards/" + bid,
-         success: function(result) {
-
-               console.log("삭제된 갯수" + result);
-
-         },
-         error: function(e) {
-            console.log(e);
-         }
-
-      });
-   }
    
-   function update(board) {
+   function get(id,callback){          
 
       $.ajax({
-         type: "PUT",
-         url: "/boards/",
-         contentType: 'application/json; charset=utf-8',
-         data: JSON.stringify(board),
-         success: function(result) {
+            type:"GET",
+            url: "/boards/" + id,
+            success : function(result) {
+               console.log(result);
+               
+               if(callback){
+                  callback(result);
+               }
+               
+            },
+            error:function(e){
+               console.log(e);
+            }
+            
+         });      
+    }
+    
+    function add(board){          
 
-               console.log("업데이트된 갯수" + result);
+       $.ajax({
+             type:"POST",
+             url: "/boards/",
+            contentType:'application/json; charset=utf-8',
+            data:JSON.stringify(board),
+             success : function(result) {
+               
+               if(result == "SUCCESS")
+                   console.log(result);
 
-         },
-         error: function(e) {
-            console.log(e);
-         }
+             },
+             error:function(e){
+                console.log(e);
+             }
+             
+          });      
+     }
+     
+     function del(bid){          
 
-      });
-   }
+         $.ajax({
+               type:"DELETE",
+               url: "/boards/" + bid,
+               success : function(result) {
+                 
+               console.log("삭제된 갯수" + result)
+                 
 
+               },
+               error:function(e){
+                  console.log(e);
+               }
+               
+            });      
+       }
+      
+      function modify(board){          
 
+          $.ajax({
+                type:"PUT",
+                url: "/boards/",
+               contentType:'application/json; charset=utf-8',
+               data:JSON.stringify(board),
+                success : function(result) {
+                  
+               console.log("삭제된 갯수" + result)
+                  
 
+                },
+                error:function(e){
+                   console.log(e);
+                }
+                
+             });      
+        }
+   
+   
    return {
-      list: list,
-      get: get,
-      add: add,
+      list : list,
+      get : get,
+      add : add,
       del : del,
-      update : update
+      modify : modify        
    }
 };
