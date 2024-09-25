@@ -51,15 +51,15 @@ public class RestEmpController {
 	
 	
 	@DeleteMapping("/{empno}") 
-	public ResponseEntity<String> delete(BoardVO board){
+	public ResponseEntity<String> delete(EmpVO emp){
 		
 		log.info("delete..");
-		log.info("board" + board);
+		log.info("emps" + emp);
 		
 		ResponseEntity<String> entity = null;
 		
 		try {
-			int rn = boardService.remove(board.getBid());
+			int rn = empService.remove(emp);
 			// 삭제가 성공하면 삭제된 갯수 출력
 			log.info("delete 넘어온 숫자:::::" + rn);
 			

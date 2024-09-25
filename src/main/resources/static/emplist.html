@@ -75,8 +75,8 @@ $(document).ready(function(){
 		
 		$(this).parent().parent().remove();
 		
-		let board = boardService();
-		board.del($(this).attr("id"));
+		let emp = empService();
+		emp.del($(this).attr("id"));
 		
 	});
 	

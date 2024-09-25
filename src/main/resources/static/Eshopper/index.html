@@ -398,11 +398,17 @@
 							        	/* 위에 숨겨놓은 태그 복사 */
 							        	let pCard = $("#person-card").clone();
 							        	$(pCard).show();
+
+							        	/* 랜덤번호 */
+							        	let randomNumber = Math.floor(Math.random()*6) + 1;
 							        	
 							        	/* find함수 - 부모/자식 태그 찾을때 사용 */
 							        	$(pCard).find('.single-products').find('h2').text('$' + this.sal);
 							        	$(pCard).find('.single-products').find('p').text(this.ename);
 							        	$(pCard).find('.add-to-cart').html('<i class="fa fa-shopping-cart"></i>' + this.empno);
+							        	
+							        	/* 이미지 랜덤 */
+							        	$(pCard).find('img').attr('src', 'images/home/product' + randomNumber + '.jpg');
 							        	
 							        	$("#f-items").append(pCard);
 							        	

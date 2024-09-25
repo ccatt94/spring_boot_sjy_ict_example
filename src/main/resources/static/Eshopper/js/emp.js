@@ -1,5 +1,5 @@
 /*
- * boardService 
+ * empService 
  * 모듈 구성하기
  *    
  * 모듈 패턴은 쉽게 말해서 Java의 클래스처럼 JavaScript를 이용해서 메서드를 가지는 객체를 구성한다. 
@@ -34,11 +34,11 @@ let empService = function(){
    
    
      
-     function del(bid){          
+     function del(empno){          
 
          $.ajax({
                type:"DELETE",
-               url: "/boards/" + bid,
+               url: "/emps/" + empno,
                success : function(result) {
                  
                console.log("삭제된 갯수" + result)

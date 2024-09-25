@@ -10,6 +10,7 @@ import java.util.List;
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.sql.init.dependency.DependsOnDatabaseInitialization;
 import org.springframework.stereotype.Repository;
 
 import edu.ict.ex.vo.DeptVO;
@@ -18,6 +19,7 @@ import edu.ict.ex.vo.DeptVO;
 
 //@Bean = @Component
 //@Bean + Dao의 의미
+@DependsOnDatabaseInitialization
 @Repository
 public class DeptDao {
 

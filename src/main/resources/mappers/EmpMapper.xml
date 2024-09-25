@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="edu.ict.ex.mapper.EmpMapper">
     <select id="getList" resultType="edu.ict.ex.vo.EmpVO">
         select * from emp
@@ -9,7 +8,7 @@
     
     <!-- INSERT INTO EMP  VALUES (1111,'홍길동','CLERK',7369,'2024-09-24', 800,8000,10); -->
     <insert id="insert">
-        INSERT INTO EMP  VALUES (#{empno},#{ename},#{job},#{mgr},#{hiredate2},#{sal},#{comm},#{deptno})
+        INSERT INTO EMP VALUES (#{empno},#{ename},#{job},#{mgr},#{hiredate},#{sal},#{comm},#{deptno})
     </insert>
     
     <select id="getTotalCount" resultType="int">
@@ -196,6 +195,13 @@
 			WHERE E.DEPTNO = D.DEPTNO AND E.SAL BETWEEN S.LOSAL AND S.HISAL
 		]]>	
 	</select>
+	
+	<delete id="delete">
+    	<!-- xml로 string이라 선언해주는 것 -->
+    	<![CDATA[ 
+        	delete from emp where empno = #{empno}
+        ]]>
+    </delete>
     
     
 </mapper>

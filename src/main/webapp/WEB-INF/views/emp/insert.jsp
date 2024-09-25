@@ -20,7 +20,7 @@
             <option value="${emp.empno}">(${emp.empno})${emp.ename}</option>
          </c:forEach>
       </select><br>
-      입사일:<input type="text" name="hiredate2"><br>
+      입사일:<input type="date" name="hiredate"><br>
       급여:<input type="text" name="sal"><br>
       커미션:<input type="text"name="comm"><br>
       부서:

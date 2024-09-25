@@ -20,20 +20,27 @@ import lombok.extern.slf4j.Slf4j;
 @Service
 public class EmpService {
 
-   @Autowired
-   private EmpMapper empMapper;
-   //private EmpDao dao;
-   
-   public List<EmpVO> getList(){
-	   System.out.println("getList()..");
-	   return empMapper.getList();
-   }
-   
-   public int insert(EmpVO empVO){
+	@Autowired
+	private EmpMapper empMapper;
+	// private EmpDao dao;
+
+	public List<EmpVO> getList() {
+		System.out.println("getList()..");
+		return empMapper.getList();
+	}
+
+	public int insert(EmpVO empVO) {
 		System.out.println("insert() ..");
 		return empMapper.insert(empVO);
 	}
-   
+	
+	public int remove(EmpVO empVO) {
+		log.info("remove()..");
+		
+		return empMapper.delete(empVO);
+	}
+	
+
 	public int getTotal() {
 		log.info("getTotal()..");
 		return empMapper.getTotalCount();
@@ -42,46 +49,45 @@ public class EmpService {
 	public List<EmpVO> getListWithPaging(Criteria cri) {
 		return empMapper.getListWithPaging(cri);
 	}
-	
-	//조인 처리한 결과
+
+	// 조인 처리한 결과
 	public List<EmpVO> getEmpDeptList() {
 		return empMapper.getEmpDeptList();
 	}
-	
-	//조인 처리한 결과
+
+	// 조인 처리한 결과
 	public List<DeptEmpVO> getDeptEmpList() {
 		return empMapper.getDeptEmpList();
 	}
 
-	//일대다 처리
+	// 일대다 처리
 	public List<SalGradeVO> getEmpSalGradeList() {
 		return empMapper.getEmpSalGradeList();
 	}
-	
-	//일대다 처리
+
+	// 일대다 처리
 	public List<SalGradeVO> getEmpDeptSalGradeList() {
 		return empMapper.getEmpDeptSalGradeList();
 	}
 
-	//Emp Dept 일대일 처리
+	// Emp Dept 일대일 처리
 	public List<EmpDeptVO> getEmpOneDeptList() {
 		return empMapper.getEmpOneDeptList();
 	}
-	
-	//일대일 처리
+
+	// 일대일 처리
 	public List<EmpGradeVO> getOneSalGradeList() {
 		return empMapper.getOneSalGradeList();
 	}
-	
-	//조인 일대일 처리
+
+	// 조인 일대일 처리
 	public List<EmpSalgradeVO> getEmpSalgrade() {
 		return empMapper.getEmpSalgrade();
 	}
-	
-	//조인 일대일 처리2
+
+	// 조인 일대일 처리2
 	public List<EmpDeptSalgradeVO> getEmpDeptSalgrade() {
 		return empMapper.getEmpDeptSalgrade();
 	}
-	
-	
+
 }

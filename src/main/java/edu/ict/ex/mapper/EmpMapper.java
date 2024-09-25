@@ -3,8 +3,10 @@ package edu.ict.ex.mapper;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import edu.ict.ex.page.Criteria;
+import edu.ict.ex.vo.BoardVO;
 import edu.ict.ex.vo.DeptEmpVO;
 import edu.ict.ex.vo.EmpDeptSalgradeVO;
 import edu.ict.ex.vo.EmpDeptVO;
@@ -19,6 +21,7 @@ public interface EmpMapper {
 
 	public List<EmpVO> getList();
 	public int insert(EmpVO empVO);
+	public int delete(EmpVO empVO);
 	
 	//조인처리 첫번째 방법
 	public List<EmpVO> getEmpDeptList(); 
