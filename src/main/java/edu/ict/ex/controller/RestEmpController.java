@@ -50,7 +50,7 @@ public class RestEmpController {
 	
 	
 	
-	@DeleteMapping("/{bid}") 
+	@DeleteMapping("/{empno}") 
 	public ResponseEntity<String> delete(BoardVO board){
 		
 		log.info("delete..");

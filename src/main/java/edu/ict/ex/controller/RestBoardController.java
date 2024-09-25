@@ -147,7 +147,7 @@ public class RestBoardController {
 	}
 	
 	@PutMapping("/") 
-	public ResponseEntity<String> modify(@RequestBody BoardVO board ){
+	public ResponseEntity<String> modify(@RequestBody BoardVO board){
 		
 		log.info("modify..");
 		log.info("board" + board);
