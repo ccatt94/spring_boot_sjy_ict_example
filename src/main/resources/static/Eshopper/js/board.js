@@ -99,7 +99,7 @@ let boardService = function(){
                data:JSON.stringify(board),
                 success : function(result) {
                   
-               console.log("삭제된 갯수" + result)
+               console.log("수정된 갯수" + result)
                   
 
                 },
