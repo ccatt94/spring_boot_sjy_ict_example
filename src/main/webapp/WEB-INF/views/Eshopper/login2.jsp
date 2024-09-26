@@ -1,3 +1,7 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -147,11 +151,14 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-4 col-sm-offset-1">
+				
+				
 					<div class="login-form"><!--login form-->
 						<h2>Login to your account</h2>
-						<form action="#">
-							<input type="text" placeholder="Name" />
-							<input type="email" placeholder="Email Address" />
+						
+						<form action="/Eshopper/login2" method="post">
+							<input type="text" id="id" name="id" placeholder="아이디" />
+							<input type="password" id="password" placeholder="패스워드" name="pw" />
 							<span>
 								<input type="checkbox" class="checkbox"> 
 								Keep me signed in
@@ -160,6 +167,8 @@
 						</form>
 					</div><!--/login form-->
 				</div>
+				
+				
 				<div class="col-sm-1">
 					<h2 class="or">OR</h2>
 				</div>
@@ -271,7 +280,7 @@
 								<li><a href="">Contact Us</a></li>
 								<li><a href="">Order Status</a></li>
 								<li><a href="">Change Location</a></li>
-								<li><a href="">FAQ’s</a></li>
+								<li><a href="">FAQâs</a></li>
 							</ul>
 						</div>
 					</div>
@@ -329,7 +338,7 @@
 		<div class="footer-bottom">
 			<div class="container">
 				<div class="row">
-					<p class="pull-left">Copyright © 2013 E-SHOPPER Inc. All rights reserved.</p>
+					<p class="pull-left">Copyright Â© 2013 E-SHOPPER Inc. All rights reserved.</p>
 					<p class="pull-right">Designed by <span><a target="_blank" href="http://www.themeum.com">Themeum</a></span></p>
 				</div>
 			</div>
