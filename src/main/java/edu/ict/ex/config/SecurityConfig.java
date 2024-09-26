@@ -1,12 +1,15 @@
 package edu.ict.ex.config;
 
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Configuration //@Component + 설정 
 @EnableWebSecurity //필터 등록 = 시큐리티 설정 파일이다 라고 알려주는 역활
@@ -72,6 +75,11 @@ public class SecurityConfig  extends WebSecurityConfigurerAdapter{
 	   .withUser("manager").password("{noop}manager").roles("MANAGER");
 	   
 	   
+   }
+   
+   @Bean
+   public PasswordEncoder passwordEncoder() {        
+     return new BCryptPasswordEncoder(); //암호화 모듈(평문 암호화)
    }
    
    
