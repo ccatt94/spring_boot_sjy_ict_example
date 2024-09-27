@@ -20,7 +20,7 @@
 	
 	<!-- 로그인이 완료된 사람 -->	
 	<sec:authorize access="isAuthenticated()">
-		<p>
+		
 			<h1><sec:authentication property="principal.username" />님 환영합니다!</h1>
 
 			<sec:authorize access="hasRole('ROLE_USER')">
