@@ -40,13 +40,13 @@ class UserMapperTest {
 	@Autowired
 	private PasswordEncoder passwordEncoder;
 	
-	@Disabled
+	//@Disabled
 	@Test
 	void testInsertUser() {
 		
 		UserVO user = new UserVO();
-		user.setUsername("admin2");
-		user.setPassword(passwordEncoder.encode("admin2"));
+		user.setUsername("admin3");
+		user.setPassword(passwordEncoder.encode("admin3"));
 		user.setEnabled("1");
 
 		userMapper.insertUser(user);
@@ -60,8 +60,8 @@ class UserMapperTest {
 	@Test
 	void testMatcher() {
 		
-		UserVO user = userMapper.getUser("admin2");
-		boolean isMatch = passwordEncoder.matches("admin2", user.getPassword());
+		UserVO user = userMapper.getUser("admin3");
+		boolean isMatch = passwordEncoder.matches("admin3", user.getPassword());
 		
 		System.out.println(user.getPassword());
 		assertEquals(isMatch, true);
