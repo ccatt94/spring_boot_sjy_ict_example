@@ -50,21 +50,21 @@ public class SecurityConfig  extends WebSecurityConfigurerAdapter{
       .antMatchers("/**").permitAll();
 
       //로그인 폼 커스터마이징(login.jsp에 있는 input 안에 name들과 맞춰야됨)
-      http.formLogin() //스프링 시큐리티에 있는 기본 로그인 폼을 사용하겠다.
+     /* http.formLogin() //스프링 시큐리티에 있는 기본 로그인 폼을 사용하겠다.
       	  .loginPage("/Eshopper/login2") //loginPage() 는 말그대로 로그인할 페이지 url 이고
       	  .usernameParameter("id")
       	  .passwordParameter("pw")
       	  .defaultSuccessUrl("/Eshopper/index");
-      //.defaultSuccessUrl("/board/list");
       System.out.println("작동함");
+      */
       	  //.permitAll(); //모든 유저가 로그인 화면은 볼 수 있게 한다
       
       //로그인 폼 커스터마이징(login.jsp에 있는 input 안에 name들과 맞춰야됨)
-      //http.formLogin() //스프링 시큐리티에 있는 기본 로그인 폼을 사용하겠다.
-      //.loginPage("/login") //loginPage() 는 말그대로 로그인할 페이지 url 이고
-      //.usernameParameter("id")
-      //.passwordParameter("pw")
-      //.defaultSuccessUrl("/");
+      http.formLogin() //스프링 시큐리티에 있는 기본 로그인 폼을 사용하겠다.
+      .loginPage("/login") //loginPage() 는 말그대로 로그인할 페이지 url 이고
+      .usernameParameter("id")
+      .passwordParameter("pw")
+      .defaultSuccessUrl("/");
       //.permitAll(); //모든 유저가 로그인 화면은 볼 수 있게 한다
       
       
