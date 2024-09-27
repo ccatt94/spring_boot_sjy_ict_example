@@ -18,6 +18,7 @@ import lombok.extern.slf4j.Slf4j;
 //알렉스 아저씨가 말해주는 넣어줘야할 포맷 형식
 @Slf4j
 @Setter
+@Getter
 public class UserDetailsVO implements UserDetails {
 	
 	private String username;
@@ -26,10 +27,13 @@ public class UserDetailsVO implements UserDetails {
 	
 	private CartVO cart;
 	
+	private String email;
+	
 	public UserDetailsVO(UserVO user) {
 		this.setUsername(user.getUsername());
 		this.setPassword(user.getPassword());
 		this.setAuthorities(user);
+		this.setEmail(user.getEmail());
 	}
 	
 	public UserDetailsVO(UserVO user, CartVO cart) {
@@ -38,6 +42,7 @@ public class UserDetailsVO implements UserDetails {
 		this.setAuthorities(user);
 		
 		this.cart = cart;
+		this.setEmail(user.getEmail());
 	}
 	
 	public CartVO getCart() {

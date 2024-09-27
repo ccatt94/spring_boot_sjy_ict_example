@@ -26,4 +26,6 @@ public class UserVO {
 	
 	private List<AuthVO> authList;
 	
+	private String email = "sally940828@naver.com";
+	
 }
