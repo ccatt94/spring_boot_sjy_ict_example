@@ -2,7 +2,10 @@ package edu.ict.ex.service;
 
 import java.util.List;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 import edu.ict.ex.mapper.BoardMapper;
@@ -22,6 +25,9 @@ public class BoardServiceImpl implements BoardService {
 	public List<BoardVO> getList() {
 		
 		log.info("getList()..");
+		
+		//1. SpringContextHolder를 통하여 가져오는 방법(일반적인 빈에서 사용 할 수 있음)
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		
 		return boardMapper.getList();
 	}
