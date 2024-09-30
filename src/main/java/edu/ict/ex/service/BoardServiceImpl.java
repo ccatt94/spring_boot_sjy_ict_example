@@ -27,7 +27,7 @@ public class BoardServiceImpl implements BoardService {
 		log.info("getList()..");
 		
 		//1. SpringContextHolder를 통하여 가져오는 방법(일반적인 빈에서 사용 할 수 있음)
-		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		//Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		
 		return boardMapper.getList();
 	}

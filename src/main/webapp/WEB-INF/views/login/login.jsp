@@ -30,6 +30,7 @@
 			<label for="password">비밀번호</label> <input type="password"
 				id="password" name="pw" />
 		</p>
+<!-- 		form 태그 사용 안할시 주석 해제 -->
 		<%-- <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" /> --%>
 		<button type="submit" class="btn">로그인</button>
 	</form:form>
